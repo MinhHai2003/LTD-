@@ -1,26 +1,33 @@
-// Test Data 1
-let markMass1 = 78; // kg
-let markHeight1 = 1.69; // meters
-let johnMass1 = 92; // kg
-let johnHeight1 = 1.95; // meters
+// Data 1
+let massMark1 = 78;
+let heightMark1 = 1.69;
+let massJohn1 = 92;
+let heightJohn1 = 1.95;
 
-// Test Data 2
-let markMass2 = 95; // kg
-let markHeight2 = 1.88; // meters
-let johnMass2 = 85; // kg
-let johnHeight2 = 1.76; // meters
+let BMIMark1 = massMark1 / (heightMark1 ** 2);
+let BMIJohn1 = massJohn1 / (heightJohn1 ** 2);
 
-// BMI Calculation for Data 1
-let markBMI1 = markMass1 / (markHeight1 ** 2);
-let johnBMI1 = johnMass1 / (johnHeight1 ** 2);
+if (BMIMark1 > BMIJohn1) {
+    console.log(`Mark's BMI (${BMIMark1.toFixed(2)}) is higher than John's (${BMIJohn1.toFixed(2)})!`);
+} else if (BMIMark1 < BMIJohn1) {
+    console.log(`John's BMI (${BMIJohn1.toFixed(2)}) is higher than Mark's (${BMIMark1.toFixed(2)})!`);
+} else {
+    console.log(`Mark and John have the same BMI (${BMIMark1.toFixed(2)})!`);
+}
 
-// BMI Calculation for Data 2
-let markBMI2 = markMass2 / (markHeight2 ** 2);
-let johnBMI2 = johnMass2 / (johnHeight2 ** 2);
+// Data 2
+let massMark2 = 95;
+let heightMark2 = 1.88;
+let massJohn2 = 85;
+let heightJohn2 = 1.76;
 
-// Comparing BMIs
-let markHigherBMI1 = markBMI1 > johnBMI1;
-let markHigherBMI2 = markBMI2 > johnBMI2;
+let BMIMark2 = massMark2 / (heightMark2 ** 2);
+let BMIJohn2 = massJohn2 / (heightJohn2 ** 2);
 
-console.log("For Data 1: Mark's BMI is higher:", markHigherBMI1); // Should output true or false
-console.log("For Data 2: Mark's BMI is higher:", markHigherBMI2); // Should output true or false
+if (BMIMark2 > BMIJohn2) {
+    console.log(`Mark's BMI (${BMIMark2.toFixed(2)}) is higher than John's (${BMIJohn2.toFixed(2)})!`);
+} else if (BMIMark2 < BMIJohn2) {
+    console.log(`John's BMI (${BMIJohn2.toFixed(2)}) is higher than Mark's (${BMIMark2.toFixed(2)})!`);
+} else {
+    console.log(`Mark and John have the same BMI (${BMIMark2.toFixed(2)})!`);
+}
