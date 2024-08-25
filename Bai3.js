@@ -1,50 +1,39 @@
-function CalculateScores(Scores){
-    const sum = Scores.reduce((acc,Scores) => acc + Scores,0);
-    return sum / Scores.length;
-}
 
-function determine( Dolphins,Koalas){
-    const DolphinsScores = CalculateScores(Dolphins);
-    const KoalasSrores = CalculateScores(Koalas);
 
-    console.log("DolphinsScores : ${DolphinsScores}");
-    console.log("KoalasSrores : ${KoalasSrores}");
-
-    if(DolphinsScores > KoalasSrores){
-        console.log("Dolphins win");
-    } else if(KoalasSrores > DolphinsScores){
-        console.log("KoalasSrores win");
-    } else if(DolphinsScores == KoalasSrores){
-        if(DolphinsScores >= 100 && KoalasSrores >= 100){
-            console.log("Hòa");
-        }else{
-            console.log("No team win");
+const win = (arr1, arr2) => {
+    let avgDolphins = arr1.reduce((v, curr) => v+curr, 0) / dolphins.length;
+    let avgKoalas = arr2.reduce((v, curr) => v+curr, 0) / dolphins.length;
+    
+    if(avgDolphins > avgKoalas) {
+        if(avgDolphins >= 100) {
+            console.log(`Dolphins(${avgDolphins}) has a higher score than Koalas(${avgKoalas})`)
+        } else {
+            console.log(`No team wins the trophy`)
         }
-    } else{
-        console.log("No team win");
+    } else if(avgDolphins < avgKoalas) {
+        if(avgKoalas >= 100) {
+            console.log(`Koalas(${avgKoalas}) has a higher score than Dolphins(${avgDolphins})`)
+        } else {
+            console.log(`No team wins the trophy`)
+        }
+    } else {
+        if(avgKoalas >= 100 && avgDolphins >= 100) {
+            console.log(`No team wins the trophy`)
+        }
     }
-
-const DolphinsScores1 =[96, 108, 89];
-const KoalasSrores1 = [88, 91, 110];
-
-const DolphinsScores2 = [97, 112, 101];
-const KoalasSrores2 = [109, 95, 123];
-
-const DolphinsScores3 = [97,112, 101];
-const KoalasSrores3 = [109, 95, 106];
-
-console.log("Score1 :");
-determine(DolphinsScores1,KoalasSrores1);
-
-console.log("Score2 :");
-determine(DolphinsScores2,KoalasSrores2);
-
-console.log("Score3 :");
-determine(DolphinsScores2,KoalasSrores2);
-
-
-
-
-
-
 }
+
+// test 01
+let dolphins = [97, 112, 101]
+let koalas = [109, 95, 123]
+win(dolphins, koalas)
+
+// test 02
+dolphins = [96, 108, 89]
+koalas = [88, 91, 110]
+win(dolphins, koalas)
+
+// test 03
+dolphins = [97, 112, 101]
+koalas = [109, 95, 106]
+win(dolphins, koalas)
