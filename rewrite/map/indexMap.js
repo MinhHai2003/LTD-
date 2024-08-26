@@ -7,4 +7,4 @@ const arrayLike = {
   };
   console.log(Array.prototype.map.call(arrayLike, (x) => x ** 2));
   // [ 4, 9, 16 ]
-  
+ 
