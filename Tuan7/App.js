@@ -17,6 +17,7 @@ const TodoApp = () => {
       });
   }, []);
 
+  
   // Render mỗi item trong danh sách
   const renderTodoItem = ({ item }) => (
     <View style={styles.todoItem}>
